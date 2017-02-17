@@ -1,0 +1,17 @@
+<%@ include file="/WEB-INF/jspf/directive/page.jspf" %>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf" %>
+
+<aside>
+<form action="controller">
+	<input type="hidden" name="command" value="viewAccount" />
+	<button type="submit"><fmt:message key="subscriber_menu.jspf.account"/></button>
+</form>
+<form action="controller">
+	<input type="hidden" name="command" value="listTariffsServices" />
+	<button type="submit"><fmt:message key="subscriber_menu.jspf.list_tariffs_services"/></button>
+</form>
+<form action="controller">
+	<input type="hidden" name="command" value="viewSettings" />
+	<button type="submit"><fmt:message key="subscriber_menu.jspf.settings"/></button>
+</form>
+</aside>

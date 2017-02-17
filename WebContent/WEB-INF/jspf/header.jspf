@@ -1,0 +1,48 @@
+<%--=========================================================================== 
+Header (top area). 
+===========================================================================--%> 
+
+<%@ include file="/WEB-INF/jspf/directive/page.jspf" %>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf" %>
+<%@ taglib uri="/WEB-INF/datetimeTag.tld" prefix="datetime"%>
+
+<header>
+
+<c:if test="${not empty user}">
+<div id="container">
+<div id="leftHeader" >
+	<datetime:currentDatetime />
+</div>
+
+<div id="centerHeader" >
+	<c:if test="${not empty block}">
+	<c:if test="${block eq 'BLOCKED' }">
+		<fmt:message key="header.jspf.block" var="block"/>
+		<span style="color: red"><c:out value="${block}"/> </span>
+	</c:if>		
+</c:if>
+</div>
+
+<div id="rightHeader" >
+
+	<c:out value="${user.fullName}"/>
+	
+	<c:if test="${not empty userRole}">
+		<c:out value="(${userRole.name})"/>
+	</c:if>
+
+	<a href="controller?command=logout">
+		<fmt:message key="header.jspf.logout"/>
+	</a> 	
+
+</div>
+</div>
+</c:if>
+
+<c:if test="${empty user and title ne 'Login'}">
+	<div id="rightHeader">
+		<a href="login.jsp"><fmt:message key="header.jspf.login"/></a>
+	</div>
+</c:if>
+
+</header>

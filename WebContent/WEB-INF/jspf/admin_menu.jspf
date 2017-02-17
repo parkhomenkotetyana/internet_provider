@@ -1,0 +1,35 @@
+<%@ include file="/WEB-INF/jspf/directive/page.jspf" %>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf" %>
+
+<aside>
+<form action="controller">
+	<input type="hidden" name="command" value="addSubscriberForm" />
+	<button type="submit"><fmt:message key="admin_menu.jspf.add_subscriber"/></button>
+</form>
+<form action="controller">
+	<input type="hidden" name="command" value="addTariffForm" />
+	<button type="submit"><fmt:message key="admin_menu.jspf.add_tariff"/></button>
+</form>
+<form action="controller">
+	<input type="hidden" name="command" value="listTariffsServices" />
+	<input type="hidden" name="type" value="delete" />
+	<button type="submit"><fmt:message key="admin_menu.jspf.delete_tariff"/></button>
+</form>
+<form action="controller">
+	<input type="hidden" name="command" value="listTariffsServices" />
+	<input type="hidden" name="type" value="edit" />
+	<button type="submit"><fmt:message key="admin_menu.jspf.edit_tariff"/></button>
+</form>
+<form action="controller">
+	<input type="hidden" name="command" value="listSubscribers" />
+	<button type="submit"><fmt:message key="admin_menu.jspf.list_subscr"/></button>
+</form>
+<form action="controller">
+	<input type="hidden" name="command" value="listTariffsServices" />
+	<button type="submit"><fmt:message key="admin_menu.jspf.list_tariffs_services"/></button>
+</form>
+<form action="controller">
+	<input type="hidden" name="command" value="viewSettings" />
+	<button type="submit"><fmt:message key="admin_menu.jspf.settings"/></button>
+</form>
+</aside>
